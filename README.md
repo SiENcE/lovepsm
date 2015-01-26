@@ -1,7 +1,7 @@
 LovePSM
 =======
 
-LovePSM is a proof of concept reimplementation of the LOVE2D runtime for Sony PSM (Playstation Vita SDK).
+LovePSM is a proof of concept reimplementation of the LOVE2D runtime for Sony PSM SDK.
 
 Requirements
 ============

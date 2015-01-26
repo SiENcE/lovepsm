@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D29CA5AA-9C3A-47FD-A145-20A13F147E83}</ProjectGuid>
+    <ProjectTypeGuids>{69878862-DA7D-4DC6-B0A1-50D8FAB4242F};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LuaInterface</RootNamespace>
+    <AssemblyName>LuaInterface</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;PSM;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <NoWarn>3008</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <NoWarn>3008</NoWarn>
+    <DefineConstants>PSM;</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Sce\Sce.Psm.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Event\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="GenerateEventAssembly\" />
+    <Folder Include="LuaLib\" />
+    <Folder Include="Method\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckType.cs" />
+    <Compile Include="Lua.cs" />
+    <Compile Include="LuaBase.cs" />
+    <Compile Include="LuaFunction.cs" />
+    <Compile Include="LuaGlobalAttribute.cs" />
+    <Compile Include="LuaHideAttribute.cs" />
+    <Compile Include="LuaRegistrationHelper.cs" />
+    <Compile Include="LuaTable.cs" />
+    <Compile Include="LuaUserData.cs" />
+    <Compile Include="Metatables.cs" />
+    <Compile Include="ObjectTranslator.cs" />
+    <Compile Include="ProxyType.cs" />
+    <Compile Include="Config\LuaInterfaceConfig.cs" />
+    <Compile Include="Event\DebugHookEventArgs.cs" />
+    <Compile Include="Event\EventCodes.cs" />
+    <Compile Include="Event\EventMasks.cs" />
+    <Compile Include="Event\HookExceptionEventArgs.cs" />
+    <Compile Include="Exceptions\LuaException.cs" />
+    <Compile Include="Exceptions\LuaScriptException.cs" />
+    <Compile Include="Extensions\GeneralExtensions.cs" />
+    <Compile Include="GenerateEventAssembly\ClassGenerator.cs" />
+    <Compile Include="GenerateEventAssembly\CodeGeneration.cs" />
+    <Compile Include="GenerateEventAssembly\DelegateGenerator.cs" />
+    <Compile Include="GenerateEventAssembly\ILuaGeneratedType.cs" />
+    <Compile Include="GenerateEventAssembly\LuaClassType.cs" />
+    <Compile Include="LuaLib\GCOptions.cs" />
+    <Compile Include="LuaLib\LuaEnums.cs" />
+    <Compile Include="LuaLib\LuaIndexes.cs" />
+    <Compile Include="LuaLib\LuaLib.cs" />
+    <Compile Include="LuaLib\LuaTypes.cs" />
+    <Compile Include="LuaLib\References.cs" />
+    <Compile Include="Method\EventHandlerContainer.cs" />
+    <Compile Include="Method\LuaClassHelper.cs" />
+    <Compile Include="Method\LuaDelegate.cs" />
+    <Compile Include="Method\LuaEventHandler.cs" />
+    <Compile Include="Method\LuaMethodWrapper.cs" />
+    <Compile Include="Method\MethodArgs.cs" />
+    <Compile Include="Method\MethodCache.cs" />
+    <Compile Include="Method\RegisterEventHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KopiLua\KopiLua.csproj">
+      <Project>{2829CA65-9884-4D14-9A0D-F48C37909775}</Project>
+      <Name>KopiLua</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+  </ItemGroup>
+</Project>
